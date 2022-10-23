@@ -6,10 +6,12 @@ import { addressRoutes } from './routes/address-routes';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent,
+    title: 'Home'
+  },
   { path: 'address', children: addressRoutes },
-   
-  
+
+
 ];
 
 @NgModule({

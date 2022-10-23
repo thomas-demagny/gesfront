@@ -1,0 +1,32 @@
+<h2>Liste des adresses</h2>
+
+<section>
+  <tr *ngFor="let adr of addresses">
+
+    <td data-label="Rue"> Rue: {{adr.streetLabel}}</td>
+    <td data-label="Numéro :">Numéro :{{adr.streetNumber}}</td>
+    <td data-label="Ville">ville :{{adr.country}}</td>
+    <td data-label="Code postal :"> Zip : {{adr.zipCode}}</td>
+
+    <td data-label="Action :"> Actions :
+      <button routerLink="edit/{{adr.id}}">éditer</button>
+      <button>Supprimer</button>
+
+    </td>
+
+
+  </tr>
+</section>
+
+
+
+
+  <a routerLink="/">retour</a>
+
+
+
+
+
+
+
+

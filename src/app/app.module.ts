@@ -4,9 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddressListComponent } from './address/address-list/address-list.component';
-import { AddressDetailsComponent } from './address/address-details/address-details.component';
+import { AddressListComponent } from './components/address/address-list/address-list.component';
+import { AddressEditComponent } from './components/address/address-edit/address-edit.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 
@@ -14,14 +15,17 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     AddressListComponent,
-    AddressDetailsComponent,
+    AddressEditComponent,
     HomeComponent,
-   
-   
+
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,17 @@
 import { Routes } from "@angular/router";
-import { AddressDetailsComponent } from "../address/address-details/address-details.component"
-import { AddressListComponent } from "../address/address-list/address-list.component"
+import { AddressEditComponent } from "../components/address/address-edit/address-edit.component"
+import { AddressListComponent } from "../components/address/address-list/address-list.component"
 
 
-export const addressRoutes: Routes = [ {
-    
-  
-      path: 'list',
-      component: AddressListComponent
-    },
-    {
-        path: 'details',
-        component: AddressDetailsComponent,
-      }]
-   
+export const addressRoutes: Routes = [{
+
+  path: '',
+  component: AddressListComponent, pathMatch: 'full',
+  title: 'Liste des adresses'
+},
+  {
+    path: 'edit/:id',
+    component: AddressEditComponent,
+    title: 'Edition de l\'adresse'
+  },
+]
