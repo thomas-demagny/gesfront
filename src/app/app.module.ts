@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddressListComponent } from './components/address/address-list/address-list.component';
 import { AddressEditComponent } from './components/address/address-edit/address-edit.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from "@angular/common/http";
 
 
