@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Address} from "../models/address";
+import {environment} from "../../environments/environment";
 
-const baseUrl = 'http://localhost:8080/address';
+const baseUrl = environment.hostUrl + `/address`;
 
 @Injectable({
   providedIn: 'root'

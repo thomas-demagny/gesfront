@@ -30,4 +30,15 @@ export class AddressListComponent implements OnInit {
     this.router.navigate(['address/edit', id]);
   }
 
+  create() {
+    this.router.navigate(['address/edit']);
+  }
+
+  delete(id: number) {
+    this.addressService.delete(id).subscribe(
+      () => {
+        this.getAddresses();
+      }
+    )
+  }
 }
