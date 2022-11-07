@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {Employee} from "../models/employee";
 import {environment} from "../../environments/environment";
 
-const baseUrl = environment.hostUrl + `/employee`;
+const baseUrl = environment.hostUrl + `/user`;
 
 @Injectable({
   providedIn: 'root'
@@ -33,4 +33,6 @@ export class EmployeeService {
   delete(id: number): Observable<any> {
       return this.http.delete(`${baseUrl}/${id}`);
   }
+
+  
 }

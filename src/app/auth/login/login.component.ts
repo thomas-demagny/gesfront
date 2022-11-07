@@ -22,7 +22,15 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    this.authService.log(this.login, this.password).pipe(map((res) => {
+    this.authService.auth(this.login, this.password).subscribe(
+      (res) => {
+        alert(this.successMessage);
+        this.loginSuccess = true;
+        this.invalidLogin = (false);
+      }
+    );
+    
+    /*.pipe(map((res) => {
       this.invalidLogin = false;
       this.loginSuccess = true;
       this.successMessage = 'Login Successful.';
@@ -30,8 +38,9 @@ export class LoginComponent implements OnInit {
     }, () => {
       this.invalidLogin = true;
       this.loginSuccess = false;
-    }))
+    })).subscribe();*/
   };
 
+  
 
 }

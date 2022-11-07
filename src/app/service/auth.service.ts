@@ -15,12 +15,14 @@ export class AuthService {
 
   }
 
-  log = (login: string, password: string) => this.http.get(environment.hostUrl + `/login`,
-    {headers: {authorization: this.createBasicAuthToken(login, password)}}).pipe(map((res) => {
+  auth = (login: string, password: string) => this.http.post(environment.hostUrl + `/auth/signin`,
+    {
+      headers: {authorization: this.createBasicAuthToken(login, password)}}).pipe(map((res) => {
     this.login = login;
     this.password = password;
     this.registerSuccessfulLogin(login, password);
-  }));
+  })
+  );
 
   createBasicAuthToken(login: string, password: string) {
     return 'Basic ' + window.btoa(login + ":" + password);

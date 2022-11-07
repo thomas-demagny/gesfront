@@ -1,3 +1,4 @@
+import { PathLocationStrategy } from "@angular/common";
 import {Address} from "./address";
 
 export class Employee {
@@ -11,4 +12,5 @@ export class Employee {
   createdAt!: Date;
   updatedAt?: Date;
   address!: Address;
+ 
 }

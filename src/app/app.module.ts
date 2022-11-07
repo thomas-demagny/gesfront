@@ -10,7 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from "@angular/common/http";
 import { EmployeeListComponent } from './components/employee/employee-list/employee-list.component';
 import { EmployeeEditComponent } from './components/employee/employee-edit/employee-edit.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './core/layout/navbar/navbar.component';
+import { FooterComponent } from './core/layout/footer/footer.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,16 @@ import { EmployeeEditComponent } from './components/employee/employee-edit/emplo
     EmployeeListComponent,
     EmployeeEditComponent,
     HomeComponent,
-
-
+    NavbarComponent,
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot() //notifications module
 
   ],
   providers: [],

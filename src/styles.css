@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 html, body {
   height: 100%;
   margin: 0;
@@ -11,11 +13,15 @@ body {
   font-size: 14px;
   color: rgb(230, 230, 230);
   box-sizing: border-box;
-  background-color: rgb(39, 37, 37);
+  background-color: rgb(172, 152, 152);
 }
 
 h2 {
   color: rgb(230, 230, 230);
   text-align: center;
 }
+
+
+
+
 
