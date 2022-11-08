@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-address-edit',
   templateUrl: './address-edit.component.html',
-  styleUrls: ['./address-edit.component.css']
+  styleUrls: ['./address-edit.component.scss']
 })
 export class AddressEditComponent implements OnInit {
   address!: Address[];

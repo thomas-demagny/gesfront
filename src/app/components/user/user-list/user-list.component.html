@@ -1,0 +1,40 @@
+
+  <div class="container">
+    <h2>Utilisateurs</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-center">
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Tèl</th>
+          <th>Email</th>
+          <th>Login</th>
+          <th>Crée le</th>
+          <th>Adresse</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" class="text-center">
+          <td>{{user.id}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.createdAt}}</td>
+
+          <td>{{user.address}}</td>
+          <td>
+            <button routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary me-3">Détails</button>
+            <button routerLink="['/user/edit', user.id]" class="btn btn-sm btn-secondary">Modifier</button>
+          <!--  <a (click)="delete(user.id)" class="btn btn-danger">Supprimer</a>-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <a routerLink="/">retour</a>

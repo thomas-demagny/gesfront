@@ -1,42 +1,82 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Gespro</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor03">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Adresse</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Employée</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Projets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Chef de projets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Entreprise</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#"></a>
-              <a class="dropdown-item" href="#"></a>
-              <a class="dropdown-item" href="#"></a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"></a>
-            </div>
-          </li>
-        </ul>
+<nav class="navbar navbar-expand-lg bg-custom">
+  <div class="container">
+    <div class="d-flex flex-grow-1">
+      <span class="w-100 d-lg-none d-block"></span>
+      <a class="navbar-brand d-none d-lg-inline-block" href="#"> GESPRO </a>
+      <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
+        <img src="../../../../assets/img/logo.png" alt="logo" class="img-fluid">
+      </a>
+      <div class="w-100 ms-4 d-flex align-items-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
     </div>
-  </nav>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+      <ul class="navbar-nav ms-auto flex-nowrap">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle drop-color" data-bs-toggle="dropdown" href="#" role="button">Employé</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/user"
+                 routerLinkActive="active">Liste des employés</a>
+            </li>
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/admin/employees/nouveau"
+                 routerLinkActive="active">Créer</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Chef de projet</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/admin/project-manager"
+                 routerLinkActive="active">Liste des chefs de projet</a></li>
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item"
+                 routerLink="/admin/project-manager/nouveau" routerLinkActive="active">Créer</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Adresse</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/admin/addresses"
+                 routerLinkActive="active">Liste d'adresses</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/admin/addresses/nouveau" routerLinkActive="active">Créer</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Entreprise</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/organisations"
+                 routerLinkActive="active">Liste des entreprises</a>
+            </li>
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item"
+                 routerLink="/admin/organisations/nouveau" routerLinkActive="active">Créer</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Projet</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/project"
+                 routerLinkActive="active">Liste des projets</a>
+            </li>
+            <li>
+              <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item"
+                 routerLink="/project/nouveau" routerLinkActive="active">Créer</a>
+            </li>
+          </ul>
+        </li>
+      </ul><!--close ul navbar -->
+    </div>
+  </div>
+</nav>

@@ -3,40 +3,28 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Address } from "../models/address";
 import { environment } from "../../environments/environment";
+import {CrudService} from "./crud.service";
 
-const baseUrl = environment.hostUrl + `/address`;
+const url: string = environment.hostUrl;
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AddressService {
+export class AddressService extends CrudService<Address> {
 
-  
-  constructor(private http: HttpClient ) { }
+  constructor(httpClient: HttpClient) {
 
-  getAll(): Observable<Address[]> {
-    return this.http.get(baseUrl) as Observable<Address[]>;
+    super(httpClient, `${url}/address`);
   }
 
-  getAddress(id: number) : Observable<any> {
-    return this.http.get(`${baseUrl}/${id}`) ;
+  findByEmployeeId(id: number): Observable<Address[]> {
+    return this.httpClient.get<Address[]>(`${url}/user/${id}`);
   }
 
-  create(address: Address): Observable<any> {
-      return this.http.post(baseUrl, address);
-  }
-
-  update(id: number, address: Address): Observable<any> {
-      return this.http.put(`${baseUrl}/${id}`, address);
-  }
-
-  delete(id: number): Observable<any> {
-      return this.http.delete(`${baseUrl}/${id}`);
-  }
 /*
   findByCountry(country: string): Observable<any> {
-      return this.http.get(`${baseUrl}?country=` + country);
+      return this.http.get(`${url}?country=` + country);
   }
 */
 

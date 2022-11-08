@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-address-list',
   templateUrl: './address-list.component.html',
-  styleUrls: ['./address-list.component.css'],
+  styleUrls: ['./address-list.component.scss'],
   providers: [AddressService]
 })
 export class AddressListComponent implements OnInit {
