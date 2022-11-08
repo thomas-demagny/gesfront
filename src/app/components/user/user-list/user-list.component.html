@@ -9,7 +9,7 @@
           <th>Prénom</th>
           <th>Tèl</th>
           <th>Email</th>
-          <th>Login</th>
+          <th>Username</th>
           <th>Crée le</th>
           <th>Adresse</th>
           <th>Actions</th>
@@ -24,12 +24,10 @@
           <td>{{user.email}}</td>
           <td>{{user.username}}</td>
           <td>{{user.createdAt}}</td>
-
-          <td>{{user.address}}</td>
+          <td>{{user.address.country}}</td>
           <td>
-            <button routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary me-3">Détails</button>
-            <button routerLink="['/user/edit', user.id]" class="btn btn-sm btn-secondary">Modifier</button>
-          <!--  <a (click)="delete(user.id)" class="btn btn-danger">Supprimer</a>-->
+            <a routerLink="edit/{{user.id}}" class="me-3"><fa-icon icon="search" class="search"></fa-icon></a>
+            <a (click)="delete(user.id)"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
           </td>
         </tr>
       </tbody>

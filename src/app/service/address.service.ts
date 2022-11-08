@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
 import { Address } from "../models/address";
 import { environment } from "../../environments/environment";
 import {CrudService} from "./crud.service";
@@ -17,12 +16,12 @@ export class AddressService extends CrudService<Address> {
 
     super(httpClient, `${url}/address`);
   }
-
+/*
   findByEmployeeId(id: number): Observable<Address[]> {
     return this.httpClient.get<Address[]>(`${url}/user/${id}`);
   }
 
-/*
+
   findByCountry(country: string): Observable<any> {
       return this.http.get(`${url}?country=` + country);
   }

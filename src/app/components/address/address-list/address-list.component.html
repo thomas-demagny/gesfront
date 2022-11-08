@@ -2,8 +2,8 @@
   <div class="row">
     <div>
       <div class="card-header d-flex justify-content-between">
-        <h5 class="card-title me-4">Liste des adresses</h5>
-        <i class="fa fa-plus-circle fa-2x" routerLink="/admin/addresses/nouveau" title="add"></i>
+        <h2 class="card-title me-4">Liste des adresses</h2>
+        <fa-icon icon="circle-plus" routerLink="/" title="ajouter" class="circle"></fa-icon>
       </div>
       <div class="card-body">
         <table class="table table-custom">
@@ -23,8 +23,8 @@
             <td data-label="Numéro :">{{adr.streetNumber}}</td>
             <td data-label="Code postal :">{{adr.zipCode}}</td>
             <td data-label="Action :">
-              <i (click)="update(adr.id)" class="fa fa-user-edit text-primary mx-3" title="edit">up</i>
-              <i (click)="delete(adr.id)" class="fa fa-trash-alt text-danger" title="Delete">del</i>
+              <a (click)="update(adr.id)" class="mx-3" title="edit"><fa-icon icon="search" class="search"></fa-icon></a>
+              <a (click)="delete(adr.id)" class="fas fa-trash-alt text-danger" title="Delete"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
             </td>
           </tr>
           </tbody>

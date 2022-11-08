@@ -5,6 +5,7 @@ import {UserService} from "../../../service/user.service";
 import { ToastrService } from 'ngx-toastr';
 
 
+
 @Component({
   selector: 'app-user',
   templateUrl: './user-list.component.html',
@@ -12,7 +13,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class UserListComponent implements OnInit {
   users!: User[];
-
 
 
   constructor(

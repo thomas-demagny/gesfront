@@ -92,14 +92,17 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "./node_modules/bootstrap/dist/scss/bootstrap.min.scss",
+              "./node_modules/bootstrap/scss/bootstrap.scss",
               "./node_modules/ngx-toastr/toastr.scss",
+              "./node-module/bootswatch/dist/darkly/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": []
-          }
+            "scripts": [
+              "./node_modules/ngx-toastr/toastr.js"
+            ]
+           }
         }
       }
     }
   }
-}
+}  

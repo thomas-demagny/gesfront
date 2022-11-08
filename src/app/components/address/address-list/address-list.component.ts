@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Address} from "../../../models/address";
 import {AddressService} from "../../../service/address.service";
 import {Router} from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-address-list',
@@ -12,7 +13,10 @@ import {Router} from "@angular/router";
 export class AddressListComponent implements OnInit {
   addresses!: Address[];
 
-  constructor(private addressService: AddressService, private router: Router) {
+  constructor(
+    private addressService: AddressService,
+     private toastr: ToastrService,
+     private router: Router) {
   }
 
   ngOnInit(): void {
@@ -35,10 +39,14 @@ export class AddressListComponent implements OnInit {
   }
 
   delete(id: number) {
-    this.addressService.delete(id).subscribe(
-      () => {
-        this.getAddresses();
+    
+      if (confirm(`Do want to delete item ${id}`)) {
+        this.addressService.delete(id).subscribe(() => {
+            this.getAddresses();
+          },
+          (error: { error: { message: string; }; status: any; }) => {
+            this.toastr.error(`${error.error.message.split(';', 1)}`, `${error.status}`);
+          });
       }
-    )
-  }
+    }
 }

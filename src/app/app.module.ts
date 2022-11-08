@@ -22,6 +22,9 @@ import { PhaseEditComponent } from './components/phase/phase-edit/phase-edit.com
 import { PhaseListComponent } from './components/phase/phase-list/phase-list.component';
 import { ProjectListComponent } from './components/project/project-list/project-list.component';
 import { ProjectEditComponent } from './components/project/project-edit/project-edit.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faTrashCan, faCirclePlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +53,7 @@ import { ProjectEditComponent } from './components/project/project-edit/project-
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         ReactiveFormsModule,
+        FontAwesomeModule,
         //notifications module
 
     ],
@@ -57,4 +61,7 @@ import { ProjectEditComponent } from './components/project/project-edit/project-
   bootstrap: [AppComponent]
 })
 export class AppModule {
+    constructor(library: FaIconLibrary) {
+        library.addIcons(faTrashCan, faCirclePlus, faSearch);
+    }
 }

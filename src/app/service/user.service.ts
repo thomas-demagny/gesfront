@@ -15,10 +15,4 @@ export class UserService extends CrudService<User> {
     super(httpClient, `${url}/user`);
   }
 
-
-
-
-
-
-
 }
