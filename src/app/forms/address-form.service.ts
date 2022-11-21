@@ -7,18 +7,16 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AddressFormService {
   constructor(private fb: FormBuilder) {}
 
-  getAddressForm() {
+  addressForm() {
     return this.fb.group({
-      id: [''],
-      streetNumber: [
-        '',
-        [Validators.compose([Validators.required, Validators.maxLength(5)])],
-      ],
+      id: [],
+      streetNumber: ['',[Validators.compose([Validators.required, Validators.maxLength(5)])],],
       streetLabel: ['', [Validators.compose([Validators.required])]],
-      zipCode: ['', [Validators.compose([Validators.required])]],
+      zipCode: ['', [Validators.compose([Validators.required, Validators.maxLength(10)])]],
       country: ['', [Validators.compose([Validators.required])]],
-      organization: ['', [Validators.compose([Validators.required])]],
-      employee: ['', Validators.required],
+      owners: ['', ],
+        
     });
+  
   }
 }

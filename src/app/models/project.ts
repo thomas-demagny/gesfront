@@ -1,19 +1,20 @@
 import {Phase} from "./phase";
 import {Organization} from "./organization";
+import { User } from "./user";
 
 export class Project {
   id!: number;
-  amount!: number;
-  creationDate!: Date;
-  endDate!: Date;
-  startDate!: Date;
-  updateDate!: Date;
-  description!: string;
   name!: string;
-  projectCode?: string;
-  Phases?: Phase[];
-  Organization?: Organization;
-  /*   ChefProjet?: ProjectManager;
+  code?: string;
+  amount!: number;
+  createdAt!: Date;
+  endedAt!: Date;
+  startedAt!: Date;
+  updatedAt!: Date;
+  description!: string;
+  phases?: Phase[];
+  organization?: Organization;
+  user?: User;
+ 
 
-  */
 }

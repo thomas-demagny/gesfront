@@ -1,1 +1,50 @@
+<div class="container">
+    <div>
+      <div class="card-header">
+        <h5 class="card-title text-center">
+          {{ title }} <!--{{ address.id }}-->
+        </h5>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()" [formGroup]="addressForm">
+          <div class="row my-1">
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="country" placeholder="Ville" type="text">
+            </div>
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="streetLabel" placeholder="Rue" type="text">
+            </div>
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="streetNumber" placeholder="Numéro de rue" type="number">
+            </div>
+          </div>
+  
+        
+            <div class="form-group col-md">
+              <input class="form-control" formControlName="zipCode" placeholder="Code postal" type="number">
+            </div>
 
+    <div class="row my-1">
+           
+            <div class="form-group col-md-4">
+              <select class="form-control" formControlName="user">
+                <option [disabled]="true" value="">Choisir un utilisateur</option>
+                <option *ngFor="let user of users" [ngValue]="user">
+                  {{ user.username }}
+                </option>
+                <option [disabled]="true" value="">Choisir une organisation</option>
+                <option *ngFor="let org of organizations" [ngValue]="org" [selected]="org.id===organization?.id">
+                  {{org.name}}
+              </select>
+             
+            </div>
+          </div>  
+
+           <div class="d-flex card-footer justify-content-center">
+                <button [disabled]="addressForm.invalid" class="btn btn-primary btn-sm mx-2" type="submit">Enregistrer</button>
+                <button class="btn btn-secondary btn-sm" type="reset">Annuler</button>
+            </div>
+            </form>
+        </div>
+        </div>
+    </div>  

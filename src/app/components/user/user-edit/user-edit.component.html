@@ -1,4 +1,52 @@
-<h2>Modif employé</h2>
+<div class="container">
+    <div class="row">
+      <div class="card-header">
+        <h5 class="card-title text-center">
+          {{ title }}
+        </h5>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+            <div class="row my-1">
 
-
-<a routerLink="/user">retour</a>
+              <div class="form-group col-md-4">
+                <input class="form-control" formControlName="fileNumber" placeholder="N° d'identification" type="text">
+              </div>
+             
+              <div class="form-group col-md-4">
+                <input class="form-control" formControlName="firstName" placeholder="Nom" type="text">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <input class="form-control" formControlName="lastName" placeholder="Prénom" type="text">
+                
+              </div>
+            </div>
+  
+            <div class="row my-1">
+              <div class="form-group col-md-2">
+                <input class="form-control" formControlName="email" placeholder="Email" type="text">
+               
+              </div>
+              <div class="form-group col-md-2">
+                <input class="form-control" formControlName="username" placeholder="Username" type="text">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <input class="form-control" formControlName="password" placeholder="Mot de passe" type="password">
+                
+              </div>
+              <div class="form-group col-md-4">
+                <input class="form-control" formControlName="phoneNumber" placeholder="Téléphone" maxlength="8" type="text">
+              
+              </div>
+            </div>
+            <div class="d-flex card-footer justify-content-center mb-2">
+              <button [disabled]="userForm.invalid" class="btn btn-primary btn-sm me-4" type="submit">Enregistrer</button>
+              <button class="btn btn-secondary btn-sm me-4" type="reset">Annuler</button>
+              <button routerLink="/user" class="btn btn-info btn-sm">Retour</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

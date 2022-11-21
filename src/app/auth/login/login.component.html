@@ -1,12 +1,40 @@
-<div class="container">
-    <h2>Login</h2>
-
-  <form>
-    <input type="text" id="login" ngModel="login" name="login" placeholder="login"/>
-    <input type="password" id="password" ngModel="password" name="password" placeholder="password"/>
-    <button type="submit" (click)="handleLogin()">Connexion</button>
-  </form>
-
-
-
-
+  <section class="py-4 vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+    <div class="container">
+       <div class="row justify-content-center">
+          <div class="col-12 d-flex align-items-center justify-content-center">
+             <div class="bg-white shadow border-0 rounded p-4 p-lg-5 ">
+                <div class="text-center text-md-center mb-4 mt-md-0">
+                   <h1 class="mb-0 h3">Connexion</h1>
+                </div>
+                <form class="mt-4">
+                   <div class="form-group mb-4">
+                      <label for="username">Nom d'utilisateur</label>
+                      <div class="input-group">
+                         <span class="input-group-text" id="addon1">
+                          icone user
+                         </span>
+                         <input type="text" ngModel="username" class="form-control" placeholder="Nom d'utilisateur" id="username" required>
+                      </div>
+                   </div>
+                   <div class="form-group">
+                      <div class="form-group mb-4">
+                         <label for="password">Mot de passe</label>
+                         <div class="input-group">
+                            <span class="input-group-text" id="addon2">
+                               icone password
+                            </span>
+                            <input type="password" ngModel="password" placeholder="Password" class="form-control" id="password" required>
+                         </div>
+                      </div>
+                    </div>
+                   <div class="d-flex justify-content-around">
+                     <div class=""><button type="submit" class="btn btn-secondary"(click)="handleLogin()">Connexion</button></div>
+                    
+                     <div class=""><button type="submit" class="btn btn-info"(click)="handleLogin()">S'inscrire</button></div>
+                  </div>
+                </form>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>     

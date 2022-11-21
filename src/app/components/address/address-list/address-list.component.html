@@ -3,40 +3,53 @@
     <div>
       <div class="card-header d-flex justify-content-between">
         <h2 class="card-title me-4">Liste des adresses</h2>
-        <fa-icon icon="circle-plus" routerLink="/" title="ajouter" class="circle"></fa-icon>
+        <fa-icon icon="circle-plus" routerLink="/address/new" title="créer" class="circle"></fa-icon>
       </div>
       <div class="card-body">
         <table class="table table-custom">
           <thead>
           <tr>
-            <th>Ville</th>
-            <th>Rue</th>
             <th>Numéro de rue</th>
+            <th>Rue</th>
             <th>Code postal</th>
-            <th>Action</th>
-          </tr>
+            <th>Ville</th>
+           
+            <th>Action</th>     
+             </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let adr of addresses">
-            <td data-label="Ville">{{adr.country}}</td>
-            <td data-label="Rue">{{adr.streetLabel}}</td>
+          <tr *ngFor="let adr of addresses" >
+        <span *ngIf="addresses.length === 0">
+          <tr>
+            <td colspan="6" class="text-center">Aucune adresse</td>
+          </tr>
+        </span>  
             <td data-label="Numéro :">{{adr.streetNumber}}</td>
+            <td data-label="Rue :">{{adr.streetLabel}}</td>
             <td data-label="Code postal :">{{adr.zipCode}}</td>
+            <td data-label="Ville :">{{adr.country}}</td>
+           
             <td data-label="Action :">
-              <a (click)="update(adr.id)" class="mx-3" title="edit"><fa-icon icon="search" class="search"></fa-icon></a>
-              <a (click)="delete(adr.id)" class="fas fa-trash-alt text-danger" title="Delete"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
+              <fa-icon icon="eye" class="eye"></fa-icon>
+              <a (click)="update(adr.id)" class="mx-3" title="edit">
+                <fa-icon icon="file-pen" class="pencil"></fa-icon>
+              </a>
+              <a (click)="delete(adr.id)" class="text-danger" title="Delete">
+                <fa-icon icon="trash-can" class="trash"></fa-icon>
+              </a>
             </td>
           </tr>
-          </tbody>
+         </tbody>
         </table>
-      </div>
+        </div>
     </div>
   </div>
-</div>
 
-
-
-
-
-
-
+  
+  <ng-container ngSwitch="truc"> 
+    <app-user *ngSwitchCase="users"></app-user>
+     <app-organization-edit *ngSwitchCase="organizations"></app-organization-edit>
+    
+  </ng-container>
+</div>         
+              

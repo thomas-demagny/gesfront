@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Address } from "../models/address";
 import { environment } from "../../environments/environment";
 import {CrudService} from "./crud.service";
+import { Observable } from 'rxjs';
 
 const url: string = environment.hostUrl;
 
@@ -16,15 +17,10 @@ export class AddressService extends CrudService<Address> {
 
     super(httpClient, `${url}/address`);
   }
-/*
-  findByEmployeeId(id: number): Observable<Address[]> {
-    return this.httpClient.get<Address[]>(`${url}/user/${id}`);
-  }
+
+  
 
 
-  findByCountry(country: string): Observable<any> {
-      return this.http.get(`${url}?country=` + country);
-  }
-*/
+  
 
 }

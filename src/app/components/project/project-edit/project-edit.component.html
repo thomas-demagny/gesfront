@@ -1,1 +1,65 @@
-<p>project-edit works!</p>
+<div class="container">
+    <div>
+      <div class="card-header">
+        <h5 class="card-title text-center">
+          {{ title }} Projet
+        </h5>
+      </div>
+  
+      <div class="card-body">
+        <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+          <div class="row my-1">
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="code" placeholder="Code" type="text">
+            </div>
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="name" placeholder="Nom" type="text">
+            </div>
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="description" placeholder="Description" type="text">
+            </div>
+  
+          </div>
+          <div class="row my-1">
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="amount" placeholder="Montant" type="number">
+            </div>
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="startDate" placeholder="Date de début" type="date">
+            </div>
+            <div class="form-group col-md-4">
+              <input class="form-control" formControlName="endDate" placeholder="Date de fin" type="date">
+            </div>
+          </div>
+  
+          <div class="row my-1">
+            <div class="form-group col-md-4">
+              <select class="form-control" formControlName="organization">
+                <option value="">Choisir une entreprise</option>
+                <option *ngFor="let org of organizations"
+                        [ngValue]="org"
+                        [selected]="org.id===organization?.id">
+                  {{org.name}}
+                </option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <select class="form-control" formControlName="user">
+                <option value="">Choisir un utilisateur</option>
+                <option *ngFor="let user of users"
+                        [ngValue]="user"
+                        [selected]="user.id===user?.id">
+                  {{user.username}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex card-footer justify-content-center">
+            <button [disabled]="projectForm.invalid" class="btn btn-primary btn-sm mx-2" type="submit">Enregistrer
+            </button>
+            <button class="btn btn-secondary btn-sm" type="reset">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

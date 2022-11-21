@@ -23,10 +23,12 @@
           <td>{{user.phoneNumber}}</td>
           <td>{{user.email}}</td>
           <td>{{user.username}}</td>
-          <td>{{user.createdAt}}</td>
-          <td>{{user.address.country}}</td>
+          <td>{{user.createdAt | date }}</td>
+          <td>{{user.address.streetNumber}} {{user.address.streetLabel}} {{user.address.country}} </td>
+          
           <td>
-            <a routerLink="edit/{{user.id}}" class="me-3"><fa-icon icon="search" class="search"></fa-icon></a>
+            <a routerLink="/"><fa-icon icon="eye" class="eye"></fa-icon></a>
+            <a routerLink="edit/{{user.id}}" class="me-3"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
             <a (click)="delete(user.id)"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
           </td>
         </tr>

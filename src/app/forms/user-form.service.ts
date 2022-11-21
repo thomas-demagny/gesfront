@@ -9,19 +9,31 @@ export class UserFormService {
   constructor(private fb: FormBuilder) {
   }
 
- getUserForm() {
+ userForm() {
     return this.fb.group({
       id: ['',],
-      creationDate: [new Date()],
-      email: ['', [Validators.compose([Validators.email, Validators.required])]],
+      createdAt: [new Date('now'),],
       fileNumber: ['', Validators.required],
-      firstname: ['', [Validators.compose([Validators.required])]],
-      lastname: ['',],
+      firstName: ['', [Validators.compose([Validators.required])]],
+      lastName: ['',],
+      email: ['', [Validators.compose([Validators.email, Validators.required])]],
       username: ['', [Validators.compose([Validators.required])]],
-      password: ['', [Validators.compose([Validators.required])]],
+      password: ['',
+       [Validators.compose(
+        [Validators.required,
+           Validators.minLength(8),
+            Validators.maxLength(18),
+             Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
+            ]
+            )
+          ]
+        ],
       phoneNumber: ['',],
-      updateDate: ['',],
+      updatedAt: ['',],
       address: [],
-    })
+ })
   }
-}
+} 
+            
+      
+   

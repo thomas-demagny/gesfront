@@ -9,9 +9,15 @@ export const addressRoutes: Routes = [{
   component: AddressListComponent, pathMatch: 'full',
   title: 'Liste des adresses'
 },
+
+{
+  path: 'new',
+  component: AddressEditComponent,
+  title: 'Créer une adresse'
+},
   {
     path: 'edit/:id',
     component: AddressEditComponent,
     title: 'Edition de l\'adresse'
   },
-]
+];

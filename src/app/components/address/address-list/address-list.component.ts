@@ -3,6 +3,10 @@ import {Address} from "../../../models/address";
 import {AddressService} from "../../../service/address.service";
 import {Router} from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
+import { Organization } from 'src/app/models/organization';
+import { User } from 'src/app/models/user';
+import { OrganizationService } from 'src/app/service/organization.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-address-list',
@@ -12,41 +16,65 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddressListComponent implements OnInit {
   addresses!: Address[];
+  owner!: User | Organization;
+  organizations!: Organization[];
+  organization!: Organization;
+  users!: User[];
+  user!: User;
 
   constructor(
     private addressService: AddressService,
+    private userService: UserService,
+    private orgService: OrganizationService,
      private toastr: ToastrService,
      private router: Router) {
   }
 
   ngOnInit(): void {
     this.getAddresses();
+    
+     
   }
 
   getAddresses() {
     this.addressService.getAll().subscribe(
-      (addresses) => {
-        this.addresses = addresses;
+      (addresses) => { this.addresses = addresses;
+      
       });
-  }
+    }
+
+  
 
   update(id: number) {
     this.router.navigate(['address/edit', id]);
   }
 
-  create() {
-    this.router.navigate(['address/edit']);
-  }
-
   delete(id: number) {
-    
-      if (confirm(`Do want to delete item ${id}`)) {
+      if (confirm(`Voulez-vous supprimer ? ${id}`)) {
         this.addressService.delete(id).subscribe(() => {
             this.getAddresses();
           },
-          (error: { error: { message: string; }; status: any; }) => {
+          (error) => {
             this.toastr.error(`${error.error.message.split(';', 1)}`, `${error.status}`);
           });
       }
     }
+
+    getUsers() {
+      this.userService.getAll().subscribe((data) => {
+          this.users = data;
+        }
+        );
+    }
+  
+    getOrganizations() {
+      this.orgService.getAll().subscribe((data) => {
+          this.organizations = data;
+        }
+        );
+    }
+
+
+
+
 }

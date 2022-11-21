@@ -13,4 +13,9 @@ export const userRoutes: Routes = [{
     component: UserEditComponent,
     title: 'Edition d\'un utilisateur'
   },
+  {
+    path: 'new',
+    component: UserEditComponent,
+    title: 'Création d\'un utilisateur'
+  }
 ]

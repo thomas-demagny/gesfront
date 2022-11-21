@@ -8,16 +8,16 @@ export class PhaseFormService {
   constructor(private fb: FormBuilder) {
   }
 
-  getPhaseForm() {
+  phaseForm() {
     return this.fb.group({
       id: '',
       isEnded: [''],
-      phaseCode: [''],
-      startDate: [''],
+      code: [''],
+      startedAt: [''],
       status: [''],
-      updateDate: [new Date()],
+      updatedAt: [new Date()],
       amount: [''],
-      creationDate: [new Date()],
+      createdAt: [new Date()],
       description: [''],
       endDate: [''],
       bills: [],

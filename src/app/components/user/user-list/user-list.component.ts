@@ -36,8 +36,10 @@ export class UserListComponent implements OnInit {
   }
 
   delete(id: any) {
-    if (confirm(`Do want to delete item ${id}`)) {
-      this.userService.delete(id).subscribe(() => {
+    if (confirm(`Etes-vous sûr de vouloir supprimer l'utilisateur ?`)) {
+      this.userService.delete(id).subscribe(
+        () => {
+          this.toastr.success('L\'utilisateur a été supprimé avec succès');
           this.getUsers();
         },
         (error: { error: { message: string; }; status: any; }) => {

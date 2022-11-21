@@ -1,1 +1,42 @@
-<p>organization-list works!</p>
+<div class="container">
+    <h2>Utilisateurs</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-center">
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Tèl</th>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Crée le</th>
+          <th>Adresse</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orga of organizations" class="text-center">
+          <td>{{orga.id}}</td>
+          <td>{{orga.name}}</td>
+          <td>{{orga.name}}</td>
+          <td>{{orga.phoneNumber}}</td>
+          <td>{{orga.contactEmail}}</td>
+          <td>{{orga.addrWeb}}</td>
+          <td>{{orga.contactEmail }}</td>
+          <td>{{orga.address.streetLabel}}<br/>
+              {{orga.address.streetNumber}}<br/>
+              {{ orga.address.country}}
+          </td>
+          
+          <td>
+            <a routerLink="/"><fa-icon icon="eye" class="eye"></fa-icon></a>
+            <a routerLink="edit/{{orga.id}}" class="me-3"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
+            <a (click)="delete(orga.id)"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <a routerLink="/">retour</a>

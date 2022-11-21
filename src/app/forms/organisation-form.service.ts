@@ -9,7 +9,7 @@ export class OrganisationFormService {
   constructor(private fb: FormBuilder) {
   }
 
-  getOrganisationForm() {
+  organisationForm() {
     return this.fb.group({
       id: ['',],
       addrWeb: ['', [Validators.compose([Validators.required])]],

@@ -1,13 +1,15 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddressListComponent } from './components/address/address-list/address-list.component';
 import { AddressEditComponent } from './components/address/address-edit/address-edit.component';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { UserListComponent } from './components/user/user-list/user-list.component';
 import { UserEditComponent } from './components/user/user-edit/user-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,8 +24,11 @@ import { PhaseEditComponent } from './components/phase/phase-edit/phase-edit.com
 import { PhaseListComponent } from './components/phase/phase-list/phase-list.component';
 import { ProjectListComponent } from './components/project/project-list/project-list.component';
 import { ProjectEditComponent } from './components/project/project-edit/project-edit.component';
+import { RoleComponent } from './role/role.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faTrashCan, faCirclePlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan, faCirclePlus,faFilePen, faEye } from '@fortawesome/free-solid-svg-icons';
+
+
 
 
 @NgModule({
@@ -31,9 +36,9 @@ import { faTrashCan, faCirclePlus, faSearch } from '@fortawesome/free-solid-svg-
     AppComponent,
     AddressListComponent,
     AddressEditComponent,
+    HomeComponent,
     UserListComponent,
     UserEditComponent,
-    HomeComponent,
     NavbarComponent,
     FooterComponent,
     BillEditComponent,
@@ -44,24 +49,27 @@ import { faTrashCan, faCirclePlus, faSearch } from '@fortawesome/free-solid-svg-
     PhaseListComponent,
     ProjectListComponent,
     ProjectEditComponent,
-
+    RoleComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        ToastrModule.forRoot(),
-        ReactiveFormsModule,
-        FontAwesomeModule,
-        //notifications module
-
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    ReactiveFormsModule,
+    FontAwesomeModule
+  ],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr' }
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
     constructor(library: FaIconLibrary) {
-        library.addIcons(faTrashCan, faCirclePlus, faSearch);
+        library.addIcons(faTrashCan, faCirclePlus, faEye, faFilePen);
+        registerLocaleData(localeFr, 'fr');
     }
 }

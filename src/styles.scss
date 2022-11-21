@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "bootswatch/dist/darkly/variables";
+
 @import "bootstrap/scss/bootstrap";
-@import "bootswatch/dist/darkly/bootswatch";
+
+
 
 
 /* You can add global styles to this file, and also import other style files */
@@ -26,14 +27,15 @@ th, td {
 tr:nth-child(even) {
   background-color: rgb(24,54,80);
   color: rgb(232,151,89);
+  font-weight: 700;
 
 }
 
 @media (max-width: 700px){
   .table-custom thead {
     display: none;
+  
   }
-
   .table-custom tr{
     display: block;
     margin-bottom: 40px;
@@ -42,16 +44,29 @@ tr:nth-child(even) {
   .table-custom td {
     display: block;
     text-align: right;
-&:before {
-   float: left;
-   content: attr(data-label);
-   font-weight: bold;
- }
+   &:before {
+    float: left;
+    content: attr(data-label);
+    font-weight: bold;
+  }
 }
 }
 
-.trash,.search{
+.trash,.eye,.pencil{
   font-size: 20px;
+  
+}
+
+.trash{
+  color: rgb(231, 9, 9);
+&:hover{
+  color: rgb(232,151,89);
+  cursor: pointer;
+ }
+}
+
+.eye{
+  color: rgb(232,151,89);
 }
 
 .circle{
