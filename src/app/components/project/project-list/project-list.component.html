@@ -9,7 +9,7 @@
           <table class="table table-custom">
             <thead>
             <tr>
-              <th>#</th>
+              <th>Code</th>
               <th>Nom</th>
               <th>Description</th>
               <th>Montant</th>
@@ -22,17 +22,21 @@
             </thead>
             <tbody>
             <tr *ngFor="let proj of projects">
+              <span *ngIf="projects.length === 0">
+                        <td colspan="6" class="text-center">Au</td>
+                        </span>
               <td data-label="Code projet">{{proj.code}}</td>
-              <td data-label="# :">{{proj.name}}</td>
+              <td data-label="Nom :">{{proj.name}}</td>
               <td data-label="Description :">{{proj.description}}</td>
               <td data-label="Montant :">{{proj.amount}}</td>
               <td data-label="Crée le : ">{{proj.createdAt | date}}</td>
               <td data-label="Début le :">{{proj.startedAt | date}}</td>
               <td data-label="Fin le :">{{proj.endedAt | date}}</td>
               <td data-label="MAJ le :">{{proj.updatedAt | date}}</td>
+              {{project.user}}
               <td data-label="Action :">
                 <a routerLink="/" class="me-2"><fa-icon icon="eye" class="eye"></fa-icon></a>
-                <a (click)="update(proj.id)" class="me-2" title="edit"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>  
+                <a (click)="update(proj.id)" class="me-2" title="edit"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
                 <a (click)="delete(proj.id)" class="" title="Delete"> <fa-icon icon="trash-can" class="trash"></fa-icon></a>
               </td>
             </tr>
@@ -42,7 +46,7 @@
       </div>
     </div>
   </div>
-                
-            
-      
-            
+<a routerLink="/" class="btn btn-sm btn-info">retour</a>
+
+
+

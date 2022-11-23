@@ -19,21 +19,21 @@ export class UserFormService {
       email: ['', [Validators.compose([Validators.email, Validators.required])]],
       username: ['', [Validators.compose([Validators.required])]],
       password: ['',
-       [Validators.compose(
-        [Validators.required,
-           Validators.minLength(8),
+        [
+          Validators.compose(
+            [
+            Validators.required,
+            Validators.minLength(8),
             Validators.maxLength(18),
-             Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
-            ]
-            )
+            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
           ]
-        ],
+        )
+        ]
+      ],
       phoneNumber: ['',],
       updatedAt: ['',],
-      address: [],
+      address: [''],
+      roles: [''],
  })
   }
-} 
-            
-      
-   
+}

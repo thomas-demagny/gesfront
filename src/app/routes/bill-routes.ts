@@ -14,4 +14,9 @@ export const billRoutes: Routes = [{
     component: BillEditComponent,
     title: 'Edition de facture'
   },
+  {
+    path: 'new',
+    component: BillEditComponent,
+    title: 'Création d\'une facture'
+  }
 ]

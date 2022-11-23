@@ -14,4 +14,9 @@ export const projectRoutes: Routes = [{
     component: ProjectEditComponent,
     title: 'Edition du projet'
   },
+  {
+    path: 'new',
+    component: ProjectEditComponent,
+    title: 'Création d\'un projet'
+  }
 ]

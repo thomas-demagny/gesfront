@@ -1,8 +1,3 @@
-.bg-custom {
-    background-color: #183650;
-    max-width: 100vw;
-  }
-  
   a {
     color: rgb(232,151,89);
     &:hover {
@@ -12,12 +7,12 @@
       color: moccasin;
     }
   }
-  
+
   .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
   }
-  
+
   .navbar-toggler:focus {
     outline: none;
     border: none;
@@ -39,7 +34,4 @@
     padding: 0.25rem 0.75rem;
     font-size: 1.35rem;
     line-height: 1;
-  
-  
   }
-  

@@ -5,7 +5,6 @@ import {UserService} from "../../../service/user.service";
 import { ToastrService } from 'ngx-toastr';
 
 
-
 @Component({
   selector: 'app-user',
   templateUrl: './user-list.component.html',
@@ -22,6 +21,7 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+
   }
 
   getUsers() {
@@ -47,5 +47,7 @@ export class UserListComponent implements OnInit {
         });
     }
   }
+
+
 
 }

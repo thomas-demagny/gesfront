@@ -16,11 +16,6 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class AddressListComponent implements OnInit {
   addresses!: Address[];
-  owner!: User | Organization;
-  organizations!: Organization[];
-  organization!: Organization;
-  users!: User[];
-  user!: User;
 
   constructor(
     private addressService: AddressService,
@@ -32,18 +27,18 @@ export class AddressListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAddresses();
-    
-     
+
+
   }
 
   getAddresses() {
     this.addressService.getAll().subscribe(
       (addresses) => { this.addresses = addresses;
-      
+
       });
     }
 
-  
+
 
   update(id: number) {
     this.router.navigate(['address/edit', id]);
@@ -53,26 +48,19 @@ export class AddressListComponent implements OnInit {
       if (confirm(`Voulez-vous supprimer ? ${id}`)) {
         this.addressService.delete(id).subscribe(() => {
             this.getAddresses();
+            this.toastr.success(
+              'Supprimé avec succès');
           },
           (error) => {
-            this.toastr.error(`${error.error.message.split(';', 1)}`, `${error.status}`);
+            this.toastr.error(
+              `L'adresse n'a pas pu être supprimée`,
+              `Suppression`);
           });
       }
     }
 
-    getUsers() {
-      this.userService.getAll().subscribe((data) => {
-          this.users = data;
-        }
-        );
-    }
-  
-    getOrganizations() {
-      this.orgService.getAll().subscribe((data) => {
-          this.organizations = data;
-        }
-        );
-    }
+
+
 
 
 

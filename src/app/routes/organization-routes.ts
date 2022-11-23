@@ -15,4 +15,9 @@ export const organizationRoutes: Routes = [{
     component: OrganizationEditComponent,
     title: 'Edition de l\'entreprise'
   },
+  {
+    path: 'new',
+    component: OrganizationEditComponent,
+    title: 'Création d\'une entreprise'
+  }
 ]

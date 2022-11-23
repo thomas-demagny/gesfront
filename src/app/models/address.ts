@@ -1,5 +1,3 @@
-import { Organization } from "./organization";
-import { User } from "./user";
 
 export class Address {
     id!: number;
@@ -7,9 +5,5 @@ export class Address {
     streetLabel!: string;
     streetNumber!: number;
     zipCode!: number;
-   user!: User;
-    organization!: Organization;
-    
-    
 
 }

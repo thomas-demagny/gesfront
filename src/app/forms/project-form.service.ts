@@ -21,6 +21,7 @@ export class ProjectFormService {
       code: ['', [Validators.compose([Validators.required])]],
       phases: [],
       organization: ['', Validators.required],
+      users: []
     })
   }
 }

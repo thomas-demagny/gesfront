@@ -14,4 +14,9 @@ export const phaseRoutes: Routes = [{
     component: PhaseEditComponent,
     title: 'Edition de la phase'
   },
+  {
+    path: 'new',
+    component: PhaseEditComponent,
+    title: 'Création d\'une phase'
+  }
 ]

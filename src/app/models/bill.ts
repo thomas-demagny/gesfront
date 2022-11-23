@@ -5,13 +5,13 @@ export class Bill {
   code!: string;
   amount!: number;
   status!: Status;
-  Phase!: Phase;
+  phase!: Phase;
 
 }
 
 enum Status {
-  EDITED = "EDITED",
-  TRANSMITTED = "TRANSMITTED",
-  PAID = "PAID",
-  BLOCKED = "BLOCKED"
+  EDITED = "Edité",
+  TRANSMITTED = "Transmis",
+  PAID = "Payé",
+  BLOCKED = "Bloqué"
 }

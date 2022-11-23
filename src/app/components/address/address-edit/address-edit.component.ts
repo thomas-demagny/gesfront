@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Address } from "../../../models/address";
 import { AddressService } from "../../../service/address.service";
 import { UserService } from 'src/app/service/user.service';
@@ -25,8 +25,8 @@ export class AddressEditComponent implements OnInit, OnChanges {
   user!: User | undefined;
   organizations!: Organization[];
   organization!: Organization | undefined;
-  
-  
+
+
 constructor(
     private addressService: AddressService,
     private addressFormService: AddressFormService,
@@ -37,25 +37,23 @@ constructor(
     private router: Router)
      {
       this.addressId = this.route.snapshot.params["id"];
-     
+
      }
   ngOnInit(): void {
     this.addressForm = this.addressFormService.addressForm();
-      this.getUsers();
-        this.getOrganizations();
+
       if (this.addressId) {
         this.title = "Mettre à jour l'adresse";
         this.ngOnChanges();
     }
   }
-     
+
   ngOnChanges(): void {
       this.addressService.getById(this.addressId).subscribe(
             (response) => {
               this.address = response;
               this.addressForm.patchValue(this.address);
-              this.user = this.address.user;
-              this.organization = this.address.organization;
+
             });
     }
 
@@ -83,7 +81,7 @@ constructor(
             );
           }
         );
-      } 
+      }
     } else {
       this.addressService.create(this.addressForm.value).subscribe(
         (res) => {
@@ -91,12 +89,12 @@ constructor(
             `L'adresse a été créé`,
             'Success'
           );
-          this.router.navigate(['/address/']);
+          this.router.navigate(['/user/new']);
         },
-        (error) => {
+        () => {
           this.toast.error(
-            `${error.error.message.split(';', 1)}`,
-            `${error.status}`
+            `L'adresse n'a pas été créé`,
+            `Error`
           );
         }
       );
@@ -118,4 +116,3 @@ constructor(
   }
 
 }
-  

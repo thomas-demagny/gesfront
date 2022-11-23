@@ -1,8 +1,9 @@
 import {Address} from "./address";
+import {Role} from "./role";
 
 export class User {
   id!: number;
-  fileNumber!: string;  
+  fileNumber!: string;
   lastName!: string;
   firstName!: string;
   phoneNumber!: string;
@@ -12,5 +13,6 @@ export class User {
   createdAt!: Date;
   updatedAt?: Date;
   address!: Address;
+  roles!: Role[];
 
 }

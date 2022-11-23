@@ -1,14 +1,14 @@
 import {Project} from './project';
 
 export class Phase {
-  id?: number;
-  code?: string;
+  id!: number;
+  code!: string;
   startedAt!: Date;
   status!: boolean;
   updatedAt?: Date;
-  amount?: number;
+  amount!: number;
   createdAt!: Date;
-  description?: string;
-  endedAt?: Date;
+  description!: string;
+  endedAt!: Date;
   Project!: Project;
 }

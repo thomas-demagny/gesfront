@@ -14,9 +14,11 @@ export class AddressFormService {
       streetLabel: ['', [Validators.compose([Validators.required])]],
       zipCode: ['', [Validators.compose([Validators.required, Validators.maxLength(10)])]],
       country: ['', [Validators.compose([Validators.required])]],
-      owners: ['', ],
-        
+
+      organization: ['',],
+      user: [''],
+
     });
-  
+
   }
 }

@@ -4,12 +4,12 @@ import {FormBuilder, Validators} from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class OrganisationFormService {
+export class OrganizationFormService {
 
   constructor(private fb: FormBuilder) {
   }
 
-  organisationForm() {
+  organizationForm() {
     return this.fb.group({
       id: ['',],
       addrWeb: ['', [Validators.compose([Validators.required])]],

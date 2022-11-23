@@ -9,5 +9,4 @@ export class Organization {
   phoneNumber!: number;
   address!: Address;
 
-
 }
