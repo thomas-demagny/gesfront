@@ -15,9 +15,6 @@ export class AddressFormService {
       zipCode: ['', [Validators.compose([Validators.required, Validators.maxLength(10)])]],
       country: ['', [Validators.compose([Validators.required])]],
 
-      organization: ['',],
-      user: [''],
-
     });
 
   }

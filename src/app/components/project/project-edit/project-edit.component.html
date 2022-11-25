@@ -25,10 +25,10 @@
               <input class="form-control" formControlName="amount" placeholder="Montant" type="number">
             </div>
             <div class="form-group col-md-4">
-              <input class="form-control" formControlName="startDate" placeholder="Date de début" type="date">
+              <input class="form-control" formControlName="startedAt" placeholder="Date de début" type="date">
             </div>
             <div class="form-group col-md-4">
-              <input class="form-control" formControlName="endDate" placeholder="Date de fin" type="date">
+              <input class="form-control" formControlName="endedAt" placeholder="Date de fin" type="date">
             </div>
           </div>
   
@@ -44,7 +44,7 @@
               </select>
             </div>
             <div class="form-group col-md-4">
-              <select class="form-control" formControlName="user">
+              <select class="form-control" formControlName="users">
                 <option value="">Choisir un utilisateur</option>
                 <option *ngFor="let user of users"
                         [ngValue]="user"

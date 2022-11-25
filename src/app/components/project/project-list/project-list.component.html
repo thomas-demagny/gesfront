@@ -33,11 +33,11 @@
               <td data-label="Début le :">{{proj.startedAt | date}}</td>
               <td data-label="Fin le :">{{proj.endedAt | date}}</td>
               <td data-label="MAJ le :">{{proj.updatedAt | date}}</td>
-              {{project.user}}
+              
               <td data-label="Action :">
                 <a routerLink="/" class="me-2"><fa-icon icon="eye" class="eye"></fa-icon></a>
                 <a (click)="update(proj.id)" class="me-2" title="edit"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
-                <a (click)="delete(proj.id)" class="" title="Delete"> <fa-icon icon="trash-can" class="trash"></fa-icon></a>
+                <a (click)="delete(proj.id)" class="" title="Delete"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
               </td>
             </tr>
             </tbody>

@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UserFormService } from 'src/app/forms/user-form.service';
 import { Address } from 'src/app/models/address';
 import { User } from 'src/app/models/user';
+import { AddressService } from 'src/app/service/address.service';
 import { UserService } from 'src/app/service/user.service';
 import {Role} from "../../../models/role";
 import {RoleService} from "../../../service/role.service";
@@ -15,18 +16,18 @@ import {RoleService} from "../../../service/role.service";
   styleUrls: ['./user-edit.component.scss']
 })
 export class UserEditComponent implements OnInit {
-  //address!: Address;
+  address!: Address;
+  addresses!: Address[];
   user?: User;
   userId!: number;
   userForm!: FormGroup;
   title: string = 'Créer un utilisateur';
   roles!: Role[];
-
+ 
 
 
 constructor(
-  //  private addressService: AddressService,
-  //  private addressFormService: AddressFormService,
+   
     private userService: UserService,
     private userFormService: UserFormService,
     private roleService: RoleService,
@@ -44,6 +45,7 @@ constructor(
   ngOnInit(): void {
     this.userForm = this.userFormService.userForm();
     this.getRoles();
+    
       if (this.userId) {
         this.title = "Mettre à jour";
         this.ngOnChanges();
@@ -56,10 +58,10 @@ constructor(
               this.user = response;
               this.userForm.patchValue(this.user);
               this.roles = this.user.roles;
-
-
-            });
+              
+        });
     }
+           
 
   getRoles() {
     this.roleService.getAll().subscribe(

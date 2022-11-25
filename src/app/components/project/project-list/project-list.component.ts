@@ -41,7 +41,7 @@ export class ProjectListComponent implements OnInit {
   }
 
   update(id: number) {
-    this.router.navigate(['user/edit', id]);
+    this.router.navigate(['project/edit', id]);
   }
 
   delete(id: number) {

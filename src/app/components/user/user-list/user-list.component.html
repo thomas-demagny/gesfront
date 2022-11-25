@@ -27,7 +27,7 @@
           <td>{{user.address.streetNumber}} {{user.address.streetLabel}} {{user.address.country}}</td>
 
           <td>
-            <a routerLink="/"><fa-icon icon="eye" class="eye"></fa-icon></a>
+            <a routerLink="/" class="me-3"><fa-icon icon="eye" class="eye"></fa-icon></a>
             <a routerLink="edit/{{user.id}}" class="me-3"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
             <a (click)="delete(user.id)"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
           </td>

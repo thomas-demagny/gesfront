@@ -21,17 +21,12 @@ export class AddressEditComponent implements OnInit, OnChanges {
   addressId!: number;
   addressForm!: FormGroup;
   title: string = 'Créer une adresse';
-  users!: User[];
-  user!: User | undefined;
-  organizations!: Organization[];
-  organization!: Organization | undefined;
+
 
 
 constructor(
     private addressService: AddressService,
     private addressFormService: AddressFormService,
-    private userService: UserService,
-    private orgService: OrganizationService,
     private route: ActivatedRoute,
     private toast: ToastrService,
     private router: Router)
@@ -89,6 +84,7 @@ constructor(
             `L'adresse a été créé`,
             'Success'
           );
+          this.addressService.getById(res.id).subscribe();
           this.router.navigate(['/user/new']);
         },
         () => {
@@ -101,18 +97,6 @@ constructor(
     }
   }
 
-  getUsers() {
-    this.userService.getAll().subscribe((data) => {
-        this.users = data;
-      }
-      );
-  }
 
-  getOrganizations() {
-    this.orgService.getAll().subscribe((data) => {
-        this.organizations = data;
-      }
-      );
-  }
 
 }

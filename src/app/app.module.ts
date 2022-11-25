@@ -64,7 +64,9 @@ import { faTrashCan, faCirclePlus,faFilePen, faEye } from '@fortawesome/free-sol
   providers: [
     { provide: LOCALE_ID, useValue: 'fr' }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 
 export class AppModule {

@@ -3,10 +3,7 @@ import {Address} from "../../../models/address";
 import {AddressService} from "../../../service/address.service";
 import {Router} from "@angular/router";
 import { ToastrService } from 'ngx-toastr';
-import { Organization } from 'src/app/models/organization';
-import { User } from 'src/app/models/user';
-import { OrganizationService } from 'src/app/service/organization.service';
-import { UserService } from 'src/app/service/user.service';
+
 
 @Component({
   selector: 'app-address-list',
@@ -19,10 +16,8 @@ export class AddressListComponent implements OnInit {
 
   constructor(
     private addressService: AddressService,
-    private userService: UserService,
-    private orgService: OrganizationService,
-     private toastr: ToastrService,
-     private router: Router) {
+    private toastr: ToastrService,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -58,11 +53,5 @@ export class AddressListComponent implements OnInit {
           });
       }
     }
-
-
-
-
-
-
 
 }
