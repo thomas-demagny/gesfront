@@ -1,0 +1,61 @@
+<!-- Sidebar -->
+<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-custom">
+  <div class="position-sticky">
+    <div class="list-group list-group-flush mx-3 mt-4">
+      <a
+        href="/"
+        class="list-group-item list-group-item-action py-2"
+        aria-current="false"
+      >
+        <i class="fas fa-tachometer-alt fa-fw me-3"></i>
+        <span> ######## </span>
+      </a>
+
+      <a
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLink="/project"
+        routerLinkActive="active"
+        class="list-group-item list-group-item-action py-2"
+      >
+        <i class="fas fa-building fa-fw me-3"></i>
+        <span>Projets</span>
+      </a>
+
+      <a
+        href="/"
+        class="list-group-item list-group-item-action py-2"
+      >
+        <i class="fas fa-chart-area fa-fw me-3"></i
+        ><span>Stats</span>
+      </a>
+
+      <a
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLink="/bill"
+        routerLinkActive="active"
+        class="list-group-item list-group-item-action py-2"
+      >
+        <i class="fas fa-chart-bar fa-fw me-3"></i>
+        <span>Factures</span>
+      </a>
+
+      <a
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLink="/organization"
+        routerLinkActive="active"
+        class="list-group-item list-group-item-action py-2"
+      >
+        <i class="fas fa-calendar fa-fw me-3"></i>
+        <span>Clients</span>
+      </a>
+      <a
+        [routerLinkActiveOptions]="{exact: true}" routerLink="/user"
+        routerLinkActive="active"
+        class="list-group-item list-group-item-action py-2"
+      >
+        <i class="fas fa-users fa-fw me-3"></i>
+        <span>Utilisateurs</span>
+      </a>
+    </div>
+  </div>
+</nav>

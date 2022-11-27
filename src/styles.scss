@@ -2,8 +2,6 @@
 @import 'ngx-toastr/toastr';
 @import "bootstrap/scss/bootstrap";
 
-
-/* You can add global styles to this file, and also import other style files */
 body, html {
   height: 100%;
 }
@@ -22,6 +20,14 @@ body {
 h2{
   color: #e79759;
 }
+
+.content-custom {
+  margin-top: 8rem;
+  padding: 0 20px;
+  height: calc(100vh - 58px);
+  overflow-y: auto;
+}
+
 th, td {
   text-align: center;
   padding: 8px;
@@ -29,7 +35,7 @@ th, td {
 
 tr:nth-child(even) {
   background-color: rgb(24, 54, 80);
-  color: rgb(232, 151, 89);
+  color: rgb(231, 151, 89);
   font-weight: 700;
 
 }
@@ -77,3 +83,4 @@ tr:nth-child(even) {
 .circle {
   font-size: 35px;
 }
+

@@ -1,3 +1,4 @@
+<!--
 <nav class="navbar navbar-expand-lg bg-custom">
   <div class="container">
     <div class="d-flex flex-grow-1">
@@ -19,7 +20,7 @@
           <ul class="dropdown-menu">
             <li>
               <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/user"
-                 routerLinkActive="active">Liste des utilisateurs</a>
+                 routerLinkActive="active">Liste</a>
             </li>
             <li>
               <a [routerLinkActiveOptions]="{exact: true}" class="dropdown-item" routerLink="/user/new"
@@ -27,7 +28,7 @@
             </li>
           </ul>
         </li>
-      
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button">Adresse</a>
           <ul class="dropdown-menu">
@@ -66,7 +67,73 @@
             </li>
           </ul>
         </li>
-      </ul><!--close ul navbar -->
+      </ul>
     </div>
   </div>
 </nav>
+-->
+
+<!-- Navbar -->
+<nav
+  id="main-navbar"
+  class="navbar navbar-expand-lg navbar-light  bg-custom fixed-top"
+>
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu"
+      aria-controls="sidebarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--   height="50" -->
+    <!-- Brand -->
+    <a class="navbar-brand d-none d-lg-inline-block" href="#"> GESPRO </a>
+    <a class="navbar-brand-two mx-auto d-lg-none d-inline-block" href="#">
+      <img
+        src="/assets/img/logo.png"
+        alt="logo"
+        class="img-fluid"
+      />
+    </a>
+
+    <!-- Right links -->
+    <ul class="navbar-nav ms-auto d-flex flex-row">
+      <!-- Avatar -->
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img  src=""
+                class="rounded-circle fa-user fa-lg"
+                id="user"
+                height="50"
+                alt=""
+                loading="lazy"
+          />user
+
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

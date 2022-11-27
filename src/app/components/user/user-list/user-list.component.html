@@ -1,40 +1,49 @@
 
   <div class="container">
-    <h2>Utilisateurs</h2>
-    <table class="table table-striped">
-      <thead>
-        <tr class="text-center">
-          <th>Id</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Tèl</th>
-          <th>Email</th>
-          <th>Username</th>
-          <th>Crée le</th>
-          <th>Adresse</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users" class="text-center">
-          <td>{{user.id}}</td>
-          <td>{{user.lastName}}</td>
-          <td>{{user.firstName}}</td>
-          <td>{{user.phoneNumber}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.username}}</td>
-          <td>{{user.createdAt | date }}</td>
-          <td>{{user.address.streetNumber}} {{user.address.streetLabel}} {{user.address.country}}</td>
+    <div class="content-custom">
+      <div class="card">
+        <div class="card-header">
+          <h2>Utilisateurs</h2>
+        </div>
+        <table class="table table-custom">
+          <thead>
+          <tr class="text-center">
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Tèl</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Crée le</th>
+       <!--     <th>Adresse</th> -->
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of users" class="text-center">
+            <td>{{user.id}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.phoneNumber}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.createdAt | date }}</td>
+            <!--    <td>{{user.address.streetNumber}} {{user.address.streetLabel}} {{user.address.country}}</td>-->
 
-          <td>
-            <a routerLink="/" class="me-3"><fa-icon icon="eye" class="eye"></fa-icon></a>
-            <a routerLink="edit/{{user.id}}" class="me-3"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
-            <a (click)="delete(user.id)"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+            <td>
+              <a routerLink="/" class="me-3"><fa-icon icon="eye" class="eye"></fa-icon></a>
+              <a routerLink="edit/{{user.id}}" class="me-3"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
+              <a (click)="delete(user.id)"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div><button routerLink="/" class="btn btn-sm btn-info mt-4">retour</button>
+    </div>
   </div>
 
 
-  <a routerLink="/">retour</a>
+
+
+
+

@@ -26,7 +26,8 @@ import { ProjectListComponent } from './components/project/project-list/project-
 import { ProjectEditComponent } from './components/project/project-edit/project-edit.component';
 import { RoleComponent } from './role/role.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faTrashCan, faCirclePlus,faFilePen, faEye } from '@fortawesome/free-solid-svg-icons';
+import {faTrashCan, faCirclePlus, faFilePen, faEye, faUser} from '@fortawesome/free-solid-svg-icons';
+import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
 
 
 
@@ -49,7 +50,8 @@ import { faTrashCan, faCirclePlus,faFilePen, faEye } from '@fortawesome/free-sol
     PhaseListComponent,
     ProjectListComponent,
     ProjectEditComponent,
-    RoleComponent
+    RoleComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,7 @@ import { faTrashCan, faCirclePlus,faFilePen, faEye } from '@fortawesome/free-sol
 
 export class AppModule {
     constructor(library: FaIconLibrary) {
-        library.addIcons(faTrashCan, faCirclePlus, faEye, faFilePen);
+        library.addIcons(faTrashCan, faCirclePlus, faEye, faFilePen, faUser);
         registerLocaleData(localeFr, 'fr');
     }
 }
