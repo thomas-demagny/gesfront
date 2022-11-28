@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container py-4 pb-5">
     <div class="row">
       <div>
         <div class="card-header d-flex justify-content-between">
           <h5 class="card-title">Liste des projets</h5>
-          <fa-icon class="" routerLink="/project/new" title="new"></fa-icon>
+          <fa-icon icon="circle-plus" class="circle" routerLink="/project/new" title="new"></fa-icon>
         </div>
         <div class="card-body">
           <table class="table table-custom">
@@ -23,8 +23,8 @@
             <tbody>
             <tr *ngFor="let proj of projects">
               <span *ngIf="projects.length === 0">
-                        <td colspan="6" class="text-center">Au</td>
-                        </span>
+                <td colspan="6" class="text-center">Aucun projets</td>
+              </span>
               <td data-label="Code projet">{{proj.code}}</td>
               <td data-label="Nom :">{{proj.name}}</td>
               <td data-label="Description :">{{proj.description}}</td>
@@ -33,7 +33,7 @@
               <td data-label="Début le :">{{proj.startedAt | date}}</td>
               <td data-label="Fin le :">{{proj.endedAt | date}}</td>
               <td data-label="MAJ le :">{{proj.updatedAt | date}}</td>
-              
+
               <td data-label="Action :">
                 <a routerLink="/" class="me-2"><fa-icon icon="eye" class="eye"></fa-icon></a>
                 <a (click)="update(proj.id)" class="me-2" title="edit"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
@@ -46,7 +46,3 @@
       </div>
     </div>
   </div>
-<a routerLink="/" class="btn btn-sm btn-info">retour</a>
-
-
-
