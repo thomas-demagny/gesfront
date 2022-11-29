@@ -14,7 +14,7 @@ import { projectRoutes } from "./routes/project-routes";
 const routes: Routes = [
   { path: '', component: HomeComponent,title: 'Home' },
   { path: 'address', children: addressRoutes },
-  { path: 'auth/login', component: LoginComponent, title: 'Connexion', redirectTo: '' },
+  { path: 'auth/login', component: LoginComponent, title: 'Connexion' },
   { path: 'user', children: userRoutes },
   { path: 'bill', children: billRoutes },
   { path: 'organization', children: organizationRoutes },

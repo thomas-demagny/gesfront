@@ -22,6 +22,7 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProjects();
+    
 
   }
 
@@ -29,7 +30,7 @@ export class ProjectListComponent implements OnInit {
     this.projectService.getAll().subscribe(
       (projects) => {
         this.projects = projects;
-
+        console.log(this.projects);
       });
   }
 
