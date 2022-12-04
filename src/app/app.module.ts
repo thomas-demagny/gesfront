@@ -1,3 +1,4 @@
+import { AuthComponent } from './auth/auth.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -26,8 +27,7 @@ import { ProjectListComponent } from './components/project/project-list/project-
 import { ProjectEditComponent } from './components/project/project-edit/project-edit.component';
 import { RoleComponent } from './role/role.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import {faTrashCan, faCirclePlus, faFilePen, faEye, faUser} from '@fortawesome/free-solid-svg-icons';
-import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
+import { faTrashCan, faCirclePlus, faFilePen, faEye, faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -40,6 +40,7 @@ import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
     HomeComponent,
     UserListComponent,
     UserEditComponent,
+    AuthComponent,
     NavbarComponent,
     FooterComponent,
     BillEditComponent,
@@ -51,7 +52,7 @@ import { SidebarComponent } from './core/layout/sidebar/sidebar.component';
     ProjectListComponent,
     ProjectEditComponent,
     RoleComponent,
-    SidebarComponent
+    
   ],
   imports: [
     BrowserModule,

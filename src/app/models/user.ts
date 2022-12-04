@@ -14,5 +14,6 @@ export class User {
   updatedAt?: Date;
   address!: Address;
   roles!: Role[];
+  
 
 }

@@ -1,44 +1,66 @@
+import { Request } from './../models/credentials/request';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  
-  login!: string;
+
+  username!: string;
   password!: string;
-  
+  credentials!: Request
+    
 
   constructor(private http: HttpClient) { }
 
-  auth = (login: string, password: string) => this.http.post(environment.hostUrl + `/auth/signin`,
-    {
-      headers: {authorization: this.createBasicAuthToken(login, password)}}).pipe(map((res) => {
-    this.login = login;
-    this.password = password;
-    this.registerSuccessfulLogin(login, password);
-  })
-  );
 
-  createBasicAuthToken(login: string, password: string) {
-     return 'Basic ' + window.btoa(login + ":" + password);
+  auth = (username: string, password: string) => {
+    this.credentials = new Request();
+    this.credentials.username = username;
+    this.credentials.password = password;
+    console.log(this.credentials)
+    return this.http.post(
+      environment.hostUrl + `/auth/signin`,
+      this.credentials,
+      {
+        headers: { authorization: this.createBasicAuthToken(username, password) }
+      })
+      .pipe(map((res) => {
+        this.registerSuccessfulLogin(username, password);
+      })
+      );
+  }
+      
+  createBasicAuthToken(username: string, password: string) {
+    return 'Basic ' + window.btoa(username + ":" + password);
   }
 
-  registerSuccessfulLogin(login: string, password: string) {
-    this.login = login;
+  registerSuccessfulLogin(username: string, password: string) {
+    this.username = username;
     this.password = password;
-    sessionStorage.setItem('token', window.btoa(login + ":" + password));
+    sessionStorage.setItem('token', window.btoa(username + ":" + password));
+    sessionStorage.setItem('username', username);
+    
+    
     // save the username to session
   }
 
   logout() {
-      sessionStorage.removeItem('token');
-      sessionStorage.removeItem('username');
-      this.login = '';
-      this.password = '';
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('username');
+    this.username = '';
+    this.password = '';
+    
   }
-}
+
+  isAuthenticated() {
+    return sessionStorage.getItem('token') !== null;
+  }
+
+
+} 
