@@ -226,13 +226,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="handleLogout()">
-              <i class="bi bi-box-arrow-left"></i> Déconnexion
+              <i class="bi bi-box-arrow-left"></i> Déconnexion {{isAuthenticated}}
             </a>
           </li>
         </ul>
         </div>
         
-        <!-- User (md) 
+       <!-- User (md)   
         <div *ngIf="!isAuthenticated">
           <ul class="navbar-nav">
           <li class="nav-item">
@@ -241,15 +241,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLink="/auth/signin"
+            <a class="nav-link" [routerLinkActiveOptions]="{exact: true}" routerLink="/"
                routerLinkActive="active">
-              <i class="bi bi-box-arrow-left"></i> Connexion
-            
-              
-            </a>
+              <i class="bi bi-box-arrow-left"></i> Connexion {{isAuthenticated}}
+             </a>
           </li>
         </ul>
-        </div>-->
+        </div> 
+        -->
       </div>
     </div>
   </nav>  
+              
+           

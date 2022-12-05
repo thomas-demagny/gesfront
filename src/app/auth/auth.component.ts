@@ -16,9 +16,7 @@ export class AuthComponent implements OnInit {
   authForm!: FormGroup;
   errorMessage: string = "C'est pas bon recommence!";
   successMessage: string = 'Vous êtes bien connecté !';
-  isAuthenticated!: boolean;
-  
-  
+    
   
   constructor(
     private authService: AuthService,
@@ -40,9 +38,12 @@ export class AuthComponent implements OnInit {
     this.authService.auth(this.authForm.value.username, this.authForm.value.password).subscribe(
     (res) => {
           this.toast.success(this.successMessage);
+          
           this.router.navigate(['home'])
+          
           .then(() => {
             window.location.reload();
+            
           });
           
           
@@ -54,12 +55,7 @@ export class AuthComponent implements OnInit {
       }
     
     
-    handleLogout() {
-      this.authService.logout();
-      this.toast.success('Vous êtes bien déconnecté !');
-      this.router.navigate(['']);
-      this.isAuthenticated = false;
-    }
+    
 
   }
    
