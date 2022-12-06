@@ -1,96 +1,63 @@
 <div class="container py-4 pb-5">
-    <div class="row">
-      <div>
-        <div class="card-header d-flex justify-content-between">
-          <h5 class="card-title">Liste des projets</h5>
-          <fa-icon icon="circle-plus" class="circle" routerLink="/project/new" title="new"></fa-icon>
-        </div>
-        <div class="card-body">
-          <table class="table table-custom">
-            <thead>
+  <div class="row">
+    <div class="card shadow border-0 mb-7">
+      <div class="card-header bg-white d-flex justify-content-between">
+        <h5 class="mt-3 mb-0">Projets</h5>
+        <fa-icon icon="circle-plus" class="circle" routerLink="/project/new" title="new"></fa-icon>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-hover table-nowrap">
+          <thead class="thead-light">
             <tr>
               <th>Code</th>
               <th>Nom</th>
-              <th>Description</th>
               <th>Montant</th>
               <th>Date création</th>
               <th>Date de début</th>
               <th>Date de fin</th>
-              <th>MAJ le</th>
-              <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
+              <th *ngIf="update">MAJ le</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
             <tr *ngFor="let proj of projects">
               <span *ngIf="projects.length === 0">
-                <td colspan="6" class="text-center">Aucun projets</td>
+                <td colspan="6" class="text-center">
+                  Aucun projets
+                </td>
               </span>
-              <td data-label="Code projet : ">{{proj.code}}</td>
-              <td data-label="Nom : ">{{proj.name}}</td>
-              <td data-label="Description : ">{{proj.description}}</td>
-              <td data-label="Montant :">{{proj.amount}}</td>
-              <td data-label="Crée le : ">{{proj.createdAt | date}}</td>
-              <td data-label="Début le :">{{proj.startedAt | date}}</td>
-              <td data-label="Fin le :">{{proj.endedAt | date}}</td>
-              <td data-label="MAJ le :">{{proj.updatedAt | date}}</td>
-
-              <td data-label="Action :">
-                <a routerLink="/" class="me-2"><fa-icon icon="eye" class="eye"></fa-icon></a>
-                <a (click)="update(proj.id)" class="me-2" title="edit"><fa-icon icon="file-pen" class="pencil"></fa-icon></a>
-                <a (click)="delete(proj.id)" class="" title="Delete"><fa-icon icon="trash-can" class="trash"></fa-icon></a>
+              <td>
+                {{proj.code}}
+              </td>
+              <td>
+                <a class="text-heading font-semibold" href="#">
+                  {{proj.name}}
+                </a>
+              </td>
+              <td>
+                {{proj.amount}}
+              </td>
+              <td>
+                {{proj.createdAt | date}}
+              </td>
+              <td>
+                {{proj.startedAt | date}}
+              </td>
+              <td>
+                {{proj.endedAt | date}}
+              </td>
+              <td *ngIf="update">
+                {{proj.updatedAt | date}}
+              </td>
+              <td class="text-end">
+                <a (click)="update(proj.id)" class="btn btn-sm btn-info me-2"><i class="bi bi-eye"></i></a>
+                <a (click)="delete(proj.id)" class="btn btn-sm btn-danger text-dark-hover">
+                  <i class="bi bi-trash"></i>
+                </a>
               </td>
             </tr>
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
-  <div class="card shadow border-0 mb-7">
-    <div class="card-header">
-      <h5 class="mb-0">Projets</h5>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-hover table-nowrap">
-        <thead class="thead-light">
-        <tr>
-          <th scope="col">Nom</th>
-          <th scope="col">truc</th>
-          <th scope="col">Entreprise</th>
-          <th scope="col">salaire</th>
-          <th scope="col">H rtt</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>
-           <a class="text-heading font-semibold" href="#">
-              Alain Deloin
-            </a>
-          </td>
-          <td>
-            Feb 15, 2021
-          </td>
-          <td>
-            Gihub
-          </td>
-          <td>
-            trop de salaire
-          </td>
-          <td>
-            <span class="badge badge-lg badge-dot">
-            <i class="bg-success"></i>500
-            </span>
-          </td>
-          <td class="text-end">
-            <a href="#" class="btn btn-sm btn-neutral me-2">View</a>
-            <button type="button" class="btn btn-sm btn-neutral text-danger-hover">
-              <i class="bi bi-trash"></i>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </div>  

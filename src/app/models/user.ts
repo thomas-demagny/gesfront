@@ -1,4 +1,3 @@
-import {Address} from "./address";
 import {Role} from "./role";
 
 export class User {
@@ -12,8 +11,11 @@ export class User {
   password!: string;
   createdAt!: Date;
   updatedAt?: Date;
-  address!: Address;
+  streetNumber!: number;
+  streetLabel!: string;
+  city!: string;
   roles!: Role[];
   
-
 }
+
+

@@ -15,13 +15,11 @@ export class ProjectFormService {
       createdAt: [new Date()],
       endedAt: ['', [Validators.compose([Validators.required])]],
       startedAt: ['', [Validators.compose([Validators.required])]],
-      updatedAt: [],
       description: ['', [Validators.compose([Validators.required])]],
       name: ['', [Validators.compose([Validators.required])]],
       code: ['', [Validators.compose([Validators.required])]],
-      phases: [],
       organization: ['', Validators.required],
-      users: []
+      users: ['']
     })
   }
 }

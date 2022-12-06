@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators } from "@angular/forms";
+import { RoleFormService } from './role-form.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserFormService {
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, roleForm: RoleFormService) {
   }
 
  userForm() {
@@ -32,8 +33,19 @@ export class UserFormService {
       ],
       phoneNumber: ['',],
       updatedAt: ['',],
-      address: [''],
       roles: [''],
+      streetNumber: ['',],
+      streetLabel: ['',],
+      city: ['',],
+      
  })
+  }
+
+  roleForm() {
+    return this.fb.group({
+      id: [''],
+      name: ['', Validators.required],
+      roleList: [''],
+    })
   }
 }

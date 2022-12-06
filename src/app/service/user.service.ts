@@ -16,8 +16,5 @@ export class UserService extends CrudService<User> {
      super(httpClient, `${url}/user`);
   }
 
-  getUserByAddressId(id: number): Observable<User[]> {
-    return this.httpClient.get<User[]>(`${url}/address/${id}`);
-  }
-
+  
 }

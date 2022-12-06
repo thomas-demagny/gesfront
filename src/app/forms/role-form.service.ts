@@ -12,6 +12,7 @@ export class RoleFormService {
     return this.fb.group({
       id: [''],
       name: ['', Validators.required],
+      roleList: [''],
     })
   }
 }

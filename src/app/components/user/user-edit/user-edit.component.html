@@ -38,16 +38,15 @@
             <div class="form-group col-md-4">
               <input class="form-control" formControlName="phoneNumber" placeholder="Téléphone" maxlength="8"
                 type="text">
-
             </div>
           </div>
           <div class="row my-1">
             <div class="form-group col-md-4">
               <label>Affecter un rôle</label>
               <select class="form-control" formControlName="roles" type="text">
-                <option [disabled]="true" value="">Affecter un rôle</option>
-                <option *ngFor="let role of roles" [ngValue]="role" [selected]="role.id === role.id">
-                  {{ role.name }}
+                <option [disabled]="true" value=""></option>
+                <option *ngFor="let role of roleList | keyvalue" [ngValue]="role" [selected]="role.id === role.id">
+                  {{ role.roleList  }}
                 </option>
               </select>
 

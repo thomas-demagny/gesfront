@@ -25,7 +25,7 @@ import { PhaseEditComponent } from './components/phase/phase-edit/phase-edit.com
 import { PhaseListComponent } from './components/phase/phase-list/phase-list.component';
 import { ProjectListComponent } from './components/project/project-list/project-list.component';
 import { ProjectEditComponent } from './components/project/project-edit/project-edit.component';
-import { RoleComponent } from './role/role.component';
+import { RoleComponent } from './components/role/role.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faTrashCan, faCirclePlus, faFilePen, faEye, faUser } from '@fortawesome/free-solid-svg-icons';
 

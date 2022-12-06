@@ -1,4 +1,3 @@
-import {User} from "./user";
 
 export class Role {
   id!: number;
@@ -10,6 +9,6 @@ enum RoleList {
   ROLE_ADMIN = 'ADMIN',
   ROLE_USER = 'USER',
   ROLE_ACCOUNTANT = 'ACCOUNTANT',
-  ROLE_PROJECT_MANAGER = 'PROJECT_MANAGER',
+  ROLE_PROJECT_MANAGER = 'PROJECT MANAGER',
   ROLE_SECRETARY = 'SECRETARY',
 }

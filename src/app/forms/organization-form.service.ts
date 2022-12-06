@@ -13,7 +13,7 @@ export class OrganizationFormService {
     return this.fb.group({
       id: ['',],
       addrWeb: ['', [Validators.compose([Validators.required])]],
-      contactEmail: ['', [Validators.compose([Validators.required])]],
+      contactEmail: ['', [Validators.compose([Validators.email,Validators.required])]],
       contactName: ['', [Validators.required]],
       name: ['', [Validators.required]],
       code: ['', [Validators.compose([Validators.max(7), Validators.required])]],
