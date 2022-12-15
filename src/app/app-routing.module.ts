@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './components/home/home.component';
-import { addressRoutes } from './routes/address-routes';
 import { userRoutes } from "./routes/user-routes";
 import { billRoutes } from "./routes/bill-routes";
 import { organizationRoutes } from "./routes/organization-routes";
@@ -13,7 +12,6 @@ import { projectRoutes } from "./routes/project-routes";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent,title: 'Home' },
-  { path: 'address', children: addressRoutes },
   { path: '', component: AuthComponent, title: 'Connexion' },
   { path: 'user', children: userRoutes },
   { path: 'bill', children: billRoutes },

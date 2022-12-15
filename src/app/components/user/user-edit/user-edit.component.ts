@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -19,7 +20,7 @@ export class UserEditComponent implements OnInit {
   userForm!: FormGroup;
   title: string = 'Créer un utilisateur';
   roles!: Role[];
-  roleList ; 
+   
 
 
 constructor(
@@ -59,14 +60,16 @@ constructor(
     }
            
 
+
+
   getRoles() {
-    this.roleService.getAll().subscribe(
-      (response) => {
+    this.roleService.getAll().pipe(map
+      (response => {
         this.roles = response;
-      });
-  }
-
-
+      })).subscribe();
+  }  
+        
+      
   onSubmit() {
     if (this.userId) {
       if (this.userForm.value)
@@ -106,4 +109,9 @@ constructor(
       );
     }
   }
-}
+}      
+        
+     
+
+
+  

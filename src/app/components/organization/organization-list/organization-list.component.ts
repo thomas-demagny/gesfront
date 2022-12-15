@@ -35,7 +35,7 @@ export class OrganizationListComponent implements OnInit {
     }
   
     delete(id: any) {
-      if (confirm(`Etes-vous sûr de vouloir supprimer l'utilisateur ?`)) {
+      if (confirm(`Etes-vous sûr de vouloir supprimer ce client ?`)) {
         this.organizationService.delete(id).subscribe(
           () => {
             this.toastr.success('L\'utilisateur a été supprimé avec succès');

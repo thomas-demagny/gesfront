@@ -14,7 +14,7 @@
               <input class="form-control" formControlName="name" placeholder="Nom" type="text">
             </div>
             <div class="form-group col-md-4">
-              <input class="form-control" formControlName="addrWeb" placeholder="Site web" type="text">
+              <input class="form-control" formControlName="website" placeholder="Site web" type="text">
             </div>
           </div>
           <div class="row my-1">
@@ -26,9 +26,44 @@
                      maxlength="8">
             </div>
             <div class="form-group col-md-4">
-              <input class="form-control" formControlName="phoneNumber" placeholder="Téléphone" type="number">
+              <input class="form-control" formControlName="phoneNumber" placeholder="Téléphone" type="tel">
             </div>
           </div>
+          <div class="row my-1">
+            <h2>Adresse</h2>
+          <div class="form-group col-md-2">
+            <input
+              class="form-control"
+              formControlName="streetNumber"
+              placeholder="N° de rue"
+              type="number"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <input
+              class="form-control"
+              formControlName="streetLabel"
+              placeholder="Rue"
+              type="text"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <input
+              class="form-control"
+              formControlName="city"
+              placeholder="Ville"
+              type="text"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <input
+              class="form-control"
+              formControlName="zipCode"
+              placeholder="Code postal"
+              type="number"
+            />
+          </div>
+        </div>
           <div class="d-flex card-footer justify-content-center">
             <button [disabled]="organizationForm.invalid" class="btn btn-primary btn-sm mx-2" type="submit">
               Enregistrer

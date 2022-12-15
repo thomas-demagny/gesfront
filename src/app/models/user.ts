@@ -14,6 +14,7 @@ export class User {
   streetNumber!: number;
   streetLabel!: string;
   city!: string;
+  zipCode!: number;
   roles!: Role[];
   
 }

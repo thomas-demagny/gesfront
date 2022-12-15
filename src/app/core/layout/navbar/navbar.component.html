@@ -167,12 +167,12 @@
           <!-- Menu -->
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarAvatar">
             <a 
-              href="#" 
+              href="home" 
               class="dropdown-item">
               Profile
           </a>
             <hr class="dropdown-divider">
-            <a href="#" class="dropdown-item">Déconnexion</a>
+            <a (click)="handleLogout()" class="dropdown-item">Déconnexion</a>
           </div>
         </div>
       </div>
@@ -181,7 +181,7 @@
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="home">
               <i class="bi bi-house"></i> Accueil
             </a>
           </li>
@@ -202,7 +202,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLinkActiveOptions]="{exact: true}"
+            routerLink="/bill"
+            routerLinkActive="active">
               <i class="bi bi-bookmarks"></i> Factures
             </a>
           </li>
@@ -220,7 +222,7 @@
           <!-- User (md) -->
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="home">
               <i class="bi bi-person-square"></i>
                {{username}}
             </a>

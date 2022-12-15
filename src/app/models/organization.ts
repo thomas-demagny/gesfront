@@ -1,12 +1,15 @@
-import {Address} from "./address";
 
 export class Organization {
   id!: number;
-  addrWeb!: string;
+  code!: string;
+  website!: string;
   contactEmail!: string;
   contactName!: string;
   name!: string;
-  phoneNumber!: number;
-  address!: Address;
+  phoneNumber!: string;
+  city!: string;
+  streetLabel!: string;
+  streetNumber!: number;
+  zipCode!: string;
 
 }

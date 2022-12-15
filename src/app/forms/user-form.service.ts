@@ -7,29 +7,22 @@ import { RoleFormService } from './role-form.service';
 })
 export class UserFormService {
 
-  constructor(private fb: FormBuilder, roleForm: RoleFormService) {
+  constructor(private fb: FormBuilder) {
   }
 
  userForm() {
     return this.fb.group({
       id: ['',],
-      createdAt: [new Date('now'),],
+      createdAt: ['',],
       fileNumber: ['', Validators.required],
       firstName: ['', [Validators.compose([Validators.required])]],
       lastName: ['',],
       email: ['', [Validators.compose([Validators.email, Validators.required])]],
       username: ['', [Validators.compose([Validators.required])]],
       password: ['',
-        [
-          Validators.compose(
-            [
-            Validators.required,
-            Validators.minLength(8),
-            Validators.maxLength(18),
-            Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
-          ]
-        )
-        ]
+      [
+       
+      ]
       ],
       phoneNumber: ['',],
       updatedAt: ['',],
@@ -37,15 +30,9 @@ export class UserFormService {
       streetNumber: ['',],
       streetLabel: ['',],
       city: ['',],
+      zipCode: ['',],
       
  })
   }
 
-  roleForm() {
-    return this.fb.group({
-      id: [''],
-      name: ['', Validators.required],
-      roleList: [''],
-    })
-  }
 }

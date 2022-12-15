@@ -21,11 +21,11 @@ export class ProjectEditComponent implements OnInit, OnChanges {
   project!: Project;
   projectId!: number;
   organizations!: Organization[];
-  organization: Organization | undefined;
+  organization?: Organization;
   users!: User[];
-  user: User | undefined;
-  
+  user?: User;
   title: string = 'Créer ';
+  isLoaded: boolean = false;
 
 
   constructor(
@@ -44,26 +44,29 @@ export class ProjectEditComponent implements OnInit, OnChanges {
     this.projectForm = this.projectFormService.projectForm();
     this.getUsers();
     this.getOrganizations();
+    
     if (this.projectId) {
       this.title = 'Mettre à jour ';
       this.ngOnChanges();
     }
+    this.isLoaded = true;
    } 
   
   ngOnChanges(): void {
       if (this.projectId) {
         this.projectService.getById(this.projectId).subscribe( (res) => {
           this.project = res;
-          this.projectForm.patchValue(this.project);
-          this.organization = this.project.organization;
+          this.organization = res.organization;
           this.user = this.project.user;
-        });
-      }
-    }
+          this.projectForm.patchValue(this.project);
+          
+          
+        })
+            
+  };
+}
+  
 
-  get f() {
-    return this.projectForm.controls;
-  }
 
   getUsers() {
     this.userService.getAll().subscribe((res) => {
@@ -75,7 +78,8 @@ export class ProjectEditComponent implements OnInit, OnChanges {
     this.organizationService.getAll().subscribe((res) => {
       this.organizations = res;
     });
-  }
+  }  
+    
 
   onSubmit() {
     if (this.projectId) {
@@ -118,4 +122,9 @@ export class ProjectEditComponent implements OnInit, OnChanges {
   }
 
 }
+  
+          
+        
+       
+
   
